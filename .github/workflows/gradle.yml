@@ -35,4 +35,5 @@ jobs:
     - uses: actions/setup-python@v4
       with: 
         python-version: '3.10' 
-    - run: python testRun.py
+    - run: python testRun.py runUnitTest "unitTestReport"
+    - run: python testRun.py runAcceptanceTest "acceptanceTestReport"
