@@ -34,7 +34,7 @@ jobs:
           python-version: '3.10'
       - run: python testRun.py runUnitTest "downloads/unitTestReport"
       - run: python testRun.py runAcceptanceTest "downloads/acceptanceTestReport"
-      - name: Step 3 - Use the Upload Artifact GitHub Action
+      - name: Step 2 - Use the Upload Artifact GitHub Action
         uses: actions/upload-artifact@v3
         with:
           name: Test report
