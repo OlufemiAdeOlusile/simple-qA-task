@@ -21,21 +21,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Step 1 - Create a temporary artifact downloads folder
-      run: mkdir downloads
-    - name: Set up JDK 11
-      uses: actions/setup-java@v3
-      with:
-        java-version: '11'
-        distribution: 'temurin'
-    - uses: actions/setup-python@v4
-      with: 
-        python-version: '3.10' 
-    - run: python testRun.py runUnitTest "unitTestReport"
-    - run: python testRun.py runAcceptanceTest "acceptanceTestReport"
-    - name: Step 3 - Use the Upload Artifact GitHub Action
-    - uses: actions/upload-artifact@v3
-      with:
-        name: Test report
-        path: downloads
+      - uses: actions/checkout@v3
+      - name: Step 1 - Create a temporary artifact downloads folder
+        run: mkdir downloads
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - run: python testRun.py runUnitTest "unitTestReport"
+      - run: python testRun.py runAcceptanceTest "acceptanceTestReport"
+      - name: Step 3 - Use the Upload Artifact GitHub Action
+        uses: actions/upload-artifact@v3
+        with:
+          name: Test report
+          path: downloads
